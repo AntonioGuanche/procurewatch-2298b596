@@ -35,6 +35,45 @@ export type Database = {
         }
         Relationships: []
       }
+      watchlists: {
+        Row: {
+          cpv_codes: string[]
+          created_at: string
+          email_notifications: boolean
+          id: string
+          keywords: string[]
+          matches_count: number
+          name: string
+          sources: string[]
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          cpv_codes?: string[]
+          created_at?: string
+          email_notifications?: boolean
+          id?: string
+          keywords?: string[]
+          matches_count?: number
+          name: string
+          sources?: string[]
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          cpv_codes?: string[]
+          created_at?: string
+          email_notifications?: boolean
+          id?: string
+          keywords?: string[]
+          matches_count?: number
+          name?: string
+          sources?: string[]
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
