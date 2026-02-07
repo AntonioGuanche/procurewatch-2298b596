@@ -5,7 +5,7 @@ import { useWatchlists, type Watchlist, type WatchlistInput } from "@/hooks/useW
 import WatchlistCard from "@/components/watchlists/WatchlistCard";
 import WatchlistModal from "@/components/watchlists/WatchlistModal";
 import { Button } from "@/components/ui/button";
-import { Plus, Eye } from "lucide-react";
+import { Plus, Eye, User } from "lucide-react";
 import {
   AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent,
   AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle,
@@ -48,6 +48,9 @@ const Watchlists = () => {
           <nav className="flex items-center gap-6">
             <Link to="/dashboard" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
               <Eye className="h-4 w-4" /> Marchés
+            </Link>
+            <Link to="/profile" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+              <User className="h-4 w-4" /> Profil
             </Link>
             <span className="text-sm text-muted-foreground hidden sm:inline">{user.email}</span>
             <button onClick={signOut} className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
