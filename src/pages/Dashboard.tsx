@@ -1,7 +1,7 @@
 import { useState, useCallback } from "react";
 import { useAuth } from "@/hooks/useAuth";
 import { Navigate, Link } from "react-router-dom";
-import { Eye } from "lucide-react";
+import { Eye, User } from "lucide-react";
 import { useNoticesSearch } from "@/hooks/useNoticesSearch";
 import type { NoticeFilters, Notice } from "@/types/notices";
 import FilterBar from "@/components/dashboard/FilterBar";
@@ -59,6 +59,9 @@ const Dashboard = () => {
             <nav className="flex items-center gap-4">
               <Link to="/watchlists" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
                 <Eye className="h-4 w-4" /> Mes Veilles
+              </Link>
+              <Link to="/profile" className="text-sm text-muted-foreground hover:text-foreground transition-colors flex items-center gap-1.5">
+                <User className="h-4 w-4" /> Profil
               </Link>
             </nav>
             <span className="text-sm text-muted-foreground hidden sm:inline">{user.email}</span>
