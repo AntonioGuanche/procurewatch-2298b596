@@ -37,17 +37,17 @@ const NoticeDetailModal = ({ notice, open, onClose }: NoticeDetailModalProps) =>
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div>
               <p className="text-muted-foreground text-xs mb-1">Acheteur</p>
-              <p className="font-medium text-foreground">{notice.buyer}</p>
+              <p className="font-medium text-foreground">{notice.organisation_names?.FR || notice.organisation_names?.NL || '—'}</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs mb-1">Source</p>
-              <Badge variant={notice.source === "BOSA" ? "default" : "secondary"}>
+              <Badge variant={notice.source.includes("BOSA") ? "default" : "secondary"}>
                 {notice.source}
               </Badge>
             </div>
             <div>
               <p className="text-muted-foreground text-xs mb-1">Code CPV</p>
-              <p className="font-mono text-foreground">{notice.cpv_code}</p>
+              <p className="font-mono text-foreground">{notice.cpv_main_code}</p>
             </div>
             <div>
               <p className="text-muted-foreground text-xs mb-1">Publication</p>
