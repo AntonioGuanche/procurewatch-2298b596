@@ -84,7 +84,7 @@ const Dashboard = () => {
         <FilterBar filters={filters} onChange={handleFilterChange} onSearch={handleSearch} />
 
         <NoticeTable
-          notices={data?.results ?? []}
+          notices={data?.items ?? []}
           loading={isLoading}
           onNoticeClick={setSelectedNotice}
         />

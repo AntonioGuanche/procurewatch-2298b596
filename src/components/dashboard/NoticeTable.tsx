@@ -63,12 +63,12 @@ const NoticeTable = ({ notices, loading, onNoticeClick }: NoticeTableProps) => {
                   {notice.title}
                 </button>
               </td>
-              <td className="px-4 py-3 text-muted-foreground hidden md:table-cell">{notice.buyer}</td>
-              <td className="px-4 py-3 text-muted-foreground hidden lg:table-cell font-mono text-xs">{notice.cpv_code}</td>
+              <td className="px-4 py-3 text-muted-foreground hidden md:table-cell">{notice.organisation_names?.FR || notice.organisation_names?.NL || '—'}</td>
+              <td className="px-4 py-3 text-muted-foreground hidden lg:table-cell font-mono text-xs">{notice.cpv_main_code}</td>
               <td className="px-4 py-3">
                 <Badge
-                  variant={notice.source === "BOSA" ? "default" : "secondary"}
-                  className={notice.source === "BOSA" ? "bg-primary text-primary-foreground" : ""}
+                  variant={notice.source.includes("BOSA") ? "default" : "secondary"}
+                  className={notice.source.includes("BOSA") ? "bg-primary text-primary-foreground" : ""}
                 >
                   {notice.source}
                 </Badge>

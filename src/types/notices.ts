@@ -1,18 +1,21 @@
 export interface Notice {
   id: string;
   title: string;
-  buyer: string;
-  cpv_code: string;
-  source: "BOSA" | "TED";
+  organisation_names: { FR?: string; NL?: string } | null;
+  cpv_main_code: string;
+  source: string;
   publication_date: string;
   deadline: string | null;
+  reference_number?: string;
+  description?: string | null;
 }
 
 export interface NoticesSearchResponse {
-  results: Notice[];
+  items: Notice[];
   total: number;
   page: number;
   page_size: number;
+  total_pages: number;
 }
 
 export interface NoticeFilters {
